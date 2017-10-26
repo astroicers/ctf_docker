@@ -3,9 +3,9 @@ RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential vim
 RUN pip install --upgrade pip
 RUN groupadd -r hacker_grp && \
-    useradd -r -g hacker_grp hacker_user && \
-    groupadd -r ctf_user && \
-    useradd -r -g ctf_player ctf_player
+    useradd -r -g hacker_grp hacker_user
+RUN groupadd -r ctf_gplayer && \
+    useradd -r -g ctf_gplayer ctf_player
 COPY ./ /problems/binaryexploitation
 WORKDIR /problems/binaryexploitation
 RUN gcc -o justno justno.c
