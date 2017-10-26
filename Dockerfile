@@ -10,7 +10,7 @@ COPY ./ /problems/binaryexploitation
 WORKDIR /problems/binaryexploitation
 RUN gcc -o justno justno.c
 RUN chmod 644 auth && chmod 440 flag && chmod 2755 justno && chmod 644 justno.c
-RUN chowner auth && chowner flag && chowner justno && chowner justno.c
-RUN chogrp auth && chgrp flag && chgrp justno && chgrp justno.c
+RUN chowner ctf_user auth && chowner ctf_user flag && chowner ctf_user justno && chowner ctf_user justno.c
+RUN chogrp ctf_user auth && chgrp ctf_user flag && chgrp ctf_user justno && chgrp ctf_user justno.c
 USER ctf_user
 
