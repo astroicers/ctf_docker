@@ -1,11 +1,4 @@
-MOD_SET
-
--rw-r--r--   auth        
--r--r-----   flag        
--rwxr-sr-x   justno
--rw-r--r--   justno.c    
-
-Docker for Flask
+Docker for ctf_docker
 ==================== 
 
 ### Dockerfile
@@ -25,6 +18,13 @@ WORKDIR /home/ctf_user
 WORKDIR /problems/binaryexploitation
 ```
 
+### MOD_SET
+
+-rw-r--r--    auth        
+-r--r-----     flag        
+-rwxr-sr-x   justno
+-rw-r--r--    justno.c    
+
 
 ### Build 
 ```sh
@@ -35,3 +35,11 @@ docker build -t ctf_docker .
 ```sh
 docker run -d -it astroicers/ctf_docker
 ```
+
+### QUESTION
+
+1. Enter ```sh docker exec -it [your_container ID] bash```
+
+2.Then go to ```sh /problems/binary_exploitation```
+
+3.Get the flag !
