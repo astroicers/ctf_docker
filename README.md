@@ -18,16 +18,14 @@ RUN chown hacker_user auth && chown hacker_user flag && chown hacker_user justno
 RUN chgrp hacker_grp auth && chgrp hacker_grp flag && chgrp hacker_grp justno && chgrp hacker_grp justno.c
 RUN chmod 644 auth && chmod 440 flag && chmod 2755 justno && chmod 644 justno.c
 USER ctf_player
-
-
 ```
 
 ### MOD_SET
 
--rw-r--r--    auth        
--r--r-----     flag        
--rwxr-sr-x   justno
--rw-r--r--    justno.c    
+-rw-r--r-- hacker_user hacker_grp  auth        
+-r--r----- hacker_user hacker_grp  flag        
+-rwxr-sr-x hacker_user hacker_grp  justno
+-rw-r--r-- hacker_user hacker_grp  justno.c    
 
 
 ### Build 

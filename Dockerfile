@@ -6,6 +6,8 @@ RUN groupadd -r hacker_grp && \
     useradd -r -g hacker_grp hacker_user
 RUN groupadd -r ctf_gplayer && \
     useradd -r -g ctf_gplayer ctf_player
+WORKDIR /home/ctf_player && \
+        /home/hacker_user
 COPY ./ /problems/binary_exploitation
 WORKDIR /problems/binary_exploitation
 RUN gcc -o justno justno.c
