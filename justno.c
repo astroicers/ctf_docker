@@ -12,15 +12,16 @@ int main(int argc, char **argv){
   }                                                                
   char auth[8];                                                    
   fgets(auth,8,authf);                                             
-  fclose(authf);                                                   
-  if(strcmp(auth,"no")!=0){                                        
+  fclose(authf);                                                 
+  if(strlen(auth) != strlen("no")){                                        
     FILE* flagf;                                                   
     flagf = fopen("/problems/binary_exploitation/flag","r");                                                             
     char flag[64];                                                 
     fgets(flag,64,flagf);                                          
     printf("Oh. Well the auth file doesn't say no anymore so... Here's the flag: %s",flag);                                           
     fclose(flagf);                                                 
-  }else{                                                           
+  }
+  else{                                                           
     printf("auth file says no. So no. Just... no.\n");             
   }                                                                
   return 0;                                                        

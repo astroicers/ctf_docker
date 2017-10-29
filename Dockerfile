@@ -6,8 +6,8 @@ RUN groupadd -r hacker_grp && \
     useradd -r -g hacker_grp hacker_user
 RUN groupadd -r ctf_gplayer && \
     useradd -r -g ctf_gplayer ctf_player
-COPY ./ /problems/binaryexploitation
-WORKDIR /problems/binaryexploitation
+COPY ./ /problems/binary_exploitation
+WORKDIR /problems/binary_exploitation
 RUN gcc -o justno justno.c
 RUN chown hacker_user auth && chown hacker_user flag && chown hacker_user justno && chown hacker_user justno.c
 RUN chgrp hacker_grp auth && chgrp hacker_grp flag && chgrp hacker_grp justno && chgrp hacker_grp justno.c
