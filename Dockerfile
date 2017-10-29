@@ -3,11 +3,10 @@ RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential vim
 RUN pip install --upgrade pip
 RUN groupadd -r hacker_grp && \
-    useradd -r -g hacker_grp hacker_user
+    useradd -rm -g hacker_grp hacker_user
 RUN groupadd -r ctf_gplayer && \
-    useradd -r -g ctf_gplayer ctf_player
-WORKDIR /home/ctf_player && \
-        /home/hacker_user
+    useradd -rm -g ctf_gplayer ctf_player
+WORKDIR /home/ctf_player
 COPY ./ /problems/binary_exploitation
 WORKDIR /problems/binary_exploitation
 RUN gcc -o justno justno.c
