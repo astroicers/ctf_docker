@@ -25,7 +25,7 @@ USER ctf_player
 
 -rw-r--r-- hacker_user hacker_grp  auth        
 -r--r----- hacker_user hacker_grp  flag        
--rwxr-sr-x hacker_user hacker_grp  justno
+-rwxr-sr-x hacker_user hacker_grp  justno      
 -rw-r--r-- hacker_user hacker_grp  justno.c    
 
 
